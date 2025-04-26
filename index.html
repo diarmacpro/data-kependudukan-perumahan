@@ -3,130 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Hilangkan spinner input number -->
-    <style>
-      /* Chrome, Safari, Edge, Opera */
-      input[type=number].no-spinner::-webkit-outer-spin-button,
-      input[type=number].no-spinner::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
-      }
-      </style>
   </head>
   <body class="select-none">
-    <button onclick="togleModal('formModal','show')" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md">Tambah Data</button>
-
-    <div id="formModal" class="fixed inset-0 z-40 bg-white hidden">
-      <div class="w-full h-full overflow-y-auto">
-        <div class="mx-auto p-5">
-
-          <!-- header -->
-          <div class="flex justify-between items-center mb-6">
-            <h2 class="text-2xl font-bold text-blue-700">Form Data Warga</h2>
-            <button onclick="togleModal('formModal','hide')" class="text-blue-600 hover:text-red-500 text-xl font-bold">
-              <i class="bi bi-x-lg"></i>
-            </button>
-          </div>
-
-          <!-- step 1 -->
-          <div class="">
-            <div class="grid grid-cols-1 md:grid-cols-4 form-step-1 gap-6">
-              <div>
-                <label class="block mb-1 font-medium text-blue-800">Nomor KK</label>
-                <input name="nomor_kk" type="text" required maxlength="16" class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Nomor Kartu Keluaga" />
-              </div>
-              <div>
-                <label class="block mb-1 font-medium text-blue-800">NIK</label>
-                <input name="nik" type="number" required maxlength="16" class="no-spinner w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Nomor Induk Kependudukan" />
-              </div>
-              <div>
-                <label class="block mb-1 font-medium text-blue-800">Nama Lengkap</label>
-                <input name="nama" type="text" required class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Nama Lengkap" />
-              </div>
-              <div>
-                <label class="block mb-1 font-medium text-blue-800">Agama</label>
-                <select name="agama" required class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                  <option value="">Pilih Agama</option>
-                  <option value="Islam">Islam</option>
-                  <option value="Kristen">Kristen</option>
-                  <option value="Katolik">Katolik</option>
-                  <option value="Hindu">Hindu</option>
-                  <option value="Budha">Budha</option>
-                </select>
-              </div>
-              <div>
-                <label class="block mb-1 font-medium text-blue-800">Hubungan</label>
-                <select name="hubungan" required class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400">
-                  <option value="">Pilih Hubungan</option>
-                  <option value="Kepala Keluarga">Kepala Keluarga</option>
-                  <option value="Istri">Istri</option>
-                  <option value="Anak">Anak</option>
-                </select>
-              </div>
-              <div>
-                <label class="block mb-1 font-medium text-blue-800">Tempat Lahir</label>
-                <input name="tempat_lahir" type="text" required class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Tempat Kelahiran" />
-              </div>
-              <div>
-                <label class="block mb-1 font-medium text-blue-800">Tanggal Lahir</label>
-                <input name="tanggal_lahir" type="date" required class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" />
-              </div>
-
-              <div class="">
-                <label class="block mb-1 font-medium text-blue-800">Nomor Handphone</label>
-                <input name="nomor_hp" type="text" required class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Lebih dari 1, pisahkan dengan koma" />
-              </div>
-
-              <!-- <div class="md:col-span-4">
-                <label class="inline-flex items-center space-x-2">
-                  <input type="checkbox" class="accent-blue-600 w-5 h-5">
-                  <span class="text-blue-800 font-medium">Sama dengan alamat kepala keluarga</span>
-                </label>
-              </div> -->
-
-              <div class="md:col-span-4">
-                <label class="inline-flex items-center space-x-2">
-                  <input type="checkbox" class="accent-blue-600 w-5 h-5" disabled>
-                  <span class="text-blue-800 font-medium text-opacity-60">Sama dengan alamat kepala keluarga</span>
-                </label>
-              </div>
-
-
-              <div><label class="block mb-1 font-medium text-blue-800">Alamat</label><input name="alamat_ktp" type="text" placeholder="Alamat KTP" required class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" /></div>
-              <div><label class="block mb-1 font-medium text-blue-800">Desa / Kelurahan</label><input name="desa" type="text" placeholder="Desa / Kelurahan" required class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" /></div>
-              <div><label class="block mb-1 font-medium text-blue-800">Kecamatan</label><input name="kecamatan" type="text" required placeholder="Kecamatan" class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" /></div>
-              <div><label class="block mb-1 font-medium text-blue-800">Kabupaten / Kota</label><input name="kabupaten" type="text" required placeholder="Kabupaten / Kota" class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" /></div>
-              <div><label class="block mb-1 font-medium text-blue-800">Provinsi</label><input name="provinsi" type="text" required placeholder="Provinsi" class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" /></div>
-              <div><label class="block mb-1 font-medium text-blue-800">Kode Pos</label><input name="kode_pos" type="number" placeholder="Kode Pos" maxlength="6" class="no-spinner w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" /></div>
-              <div class="flex items-end h-full">
-                <button type="button" class="w-full bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-xl">
-                  Dokumen / File / Foto
-                </button>
-              </div>
-              <div class="flex items-end h-full">
-                <button type="button" class="w-full bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-xl">
-                  Kirim
-                </button>
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script> -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
-  <!-- <script src="https://cdn.jsdelivr.net/npm/axios@1.9.0/dist/axios.min.js" integrity="sha256-zKmDh+GEVvPxPFFi3MzpYO1/ZsLgeJ1sFSz2oSvBG6Y=" crossorigin="anonymous"></script> -->
-  <script src="https://cdn.jsdelivr.net/gh/diarmacpro/cdnku@f52d4e44b5e1b0405705bf4555d9fc6a3558ae61/core.js" integrity="sha256-xxU8WD/MI8uoZ1geRPVqbSvo6MuHLOUHfu/0Vg8Bewg=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/gh/diarmacpro/cdnku@f52d4e44b5e1b0405705bf4555d9fc6a3558ae61/firebase-olah-data/f.o.d_v.0.1.js" integrity="sha256-zWulae3cn5J3A+XOHBtvtBUR7ZWYCl49OslL4exrlyQ=" crossorigin="anonymous"></script>
+    <button onclick="togleModal('formModal','show')" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md">Tambah Dataxaeeer</button>
+    <div id="modal"></div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/diarmacpro/cdnku@f52d4e44b5e1b0405705bf4555d9fc6a3558ae61/core.js" integrity="sha256-xxU8WD/MI8uoZ1geRPVqbSvo6MuHLOUHfu/0Vg8Bewg=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/diarmacpro/cdnku@f52d4e44b5e1b0405705bf4555d9fc6a3558ae61/firebase-olah-data/f.o.d_v.0.1.js" integrity="sha256-zWulae3cn5J3A+XOHBtvtBUR7ZWYCl49OslL4exrlyQ=" crossorigin="anonymous"></script>
+    <script src="./js/script-load-element.js"></script>
+    <script src="./js/script-olah-warga.js"></script>
+    <script src="./js/script-starter-fbs-class.js"></script>
   </body>
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
@@ -134,71 +23,12 @@
       query, remove, orderByChild, equalTo,
       onValue, off
     } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-database.js";
-
     const app = initializeApp({databaseURL: "https://notif-88abc-default-rtdb.asia-southeast1.firebasedatabase.app"});
-
     const db = getDatabase(app);
-
     Object.assign(window, {
       db, ref, set, get, update, push,
       query, remove, orderByChild, equalTo,
       onValue, off
     });
   </script>
-  <script>
-    let fx;
-    $(()=>{
-      fx = new Fbs(db);
-    })
-  </script>
-  
-
-  <script>
-    function togleModal(id,aksi){
-      if(aksi == 'show'){
-        $(`#${id}`).removeClass('hidden');
-      }else if (aksi == 'hide'){
-        $(`#${id}`).addClass('hidden');
-      }
-    }
-
-    function ambilDataForm() {
-      const data = {};
-      $('input[name], select[name], textarea[name]').each(function () {
-        const name = $(this).attr('name');
-        let value = $(this).val().trim();
-
-        // Khusus untuk nomor_hp
-        if (name === 'nomor_hp') {
-          data[name] = value.includes(',') ? value.split(',').map(v => v.trim()) : [value];
-        } else {
-          data[name] = value;
-        }
-      });
-      fx.iDtKy('perumahan/warga',data,()=>{});
-      console.log(data);
-      // console.log(JSON.stringify(data, null, 2));
-      // return data;
-    }
-
-    // Contoh: Panggil saat tombol kirim ditekan
-    $(document).on('click', 'button:contains("Kirim")', function () {
-      ambilDataForm();
-    });
-
-    $(()=>{
-      $('#btnStepB').click(function(){
-        $('#btnStepA').removeClass('disabled:opacity-50 disabled:cursor-not-allowed');
-        $('.form-step-1').addClass('hidden');
-        $('.form-step-2').removeClass('hidden');
-        $(this).text('Kirim');
-      })
-      $('#btnStepB').click(function(){
-        $('#btnStepA').removeClass('disabled:opacity-50 disabled:cursor-not-allowed');
-        $('.form-step-1').addClass('hidden');
-        $('.form-step-2').removeClass('hidden');
-      })
-    })
-  </script>
-
 </html>

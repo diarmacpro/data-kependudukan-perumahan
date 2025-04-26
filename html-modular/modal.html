@@ -1,0 +1,98 @@
+<div id="formModal" class="fixed inset-0 z-40 bg-white hidden">
+ <div class="w-full h-full overflow-y-auto">
+   <div class="mx-auto p-5">
+     <!-- header -->
+     <div class="flex justify-between items-center mb-6">
+       <h2 class="text-2xl font-bold text-blue-700">Form Data Warga</h2>
+       <button onclick="togleModal('formModal','hide')" class="text-blue-600 hover:text-red-500 text-xl font-bold">
+         <i class="bi bi-x-lg"></i>
+       </button>
+     </div>
+     <!-- step 1 -->
+     <div class="">
+       <div class="grid grid-cols-1 md:grid-cols-4 form-step-1 gap-6">
+         <div>
+           <label class="block mb-1 font-medium text-blue-800">Nomor KK</label>
+           <input name="nomor_kk" type="text" required maxlength="16" class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Nomor Kartu Keluaga" />
+         </div>
+         <div>
+           <label class="block mb-1 font-medium text-blue-800">NIK</label>
+           <input name="nik" type="number" required maxlength="16" class="no-spinner w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Nomor Induk Kependudukan" />
+         </div>
+         <div>
+           <label class="block mb-1 font-medium text-blue-800">Nama Lengkap</label>
+           <input name="nama" type="text" required class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Nama Lengkap" />
+         </div>
+         <div>
+           <label class="block mb-1 font-medium text-blue-800">Agama</label>
+           <select name="agama" required class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400">
+             <option value="">Pilih Agama</option>
+             <option value="Islam">Islam</option>
+             <option value="Kristen">Kristen</option>
+             <option value="Katolik">Katolik</option>
+             <option value="Hindu">Hindu</option>
+             <option value="Budha">Budha</option>
+           </select>
+         </div>
+         <div>
+           <label class="block mb-1 font-medium text-blue-800">Hubungan</label>
+           <select name="hubungan" required class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400">
+             <option value="">Pilih Hubungan</option>
+             <option value="Kepala Keluarga">Kepala Keluarga</option>
+             <option value="Istri">Istri</option>
+             <option value="Anak">Anak</option>
+           </select>
+         </div>
+         <div>
+           <label class="block mb-1 font-medium text-blue-800">Tempat Lahir</label>
+           <input name="tempat_lahir" type="text" required class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Tempat Kelahiran" />
+         </div>
+         <div>
+           <label class="block mb-1 font-medium text-blue-800">Tanggal Lahir</label>
+           <input name="tanggal_lahir" type="date" required class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+         </div>
+         <div class="">
+           <label class="block mb-1 font-medium text-blue-800">Nomor Handphone</label>
+           <input name="nomor_hp" type="text" required class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Lebih dari 1, pisahkan dengan koma" />
+         </div>
+         <div class="md:col-span-4">
+           <label class="inline-flex items-center space-x-2">
+             <input type="checkbox" class="accent-blue-600 w-5 h-5" disabled>
+             <span class="text-blue-800 font-medium text-opacity-60">Sama dengan alamat kepala keluarga</span>
+           </label>
+         </div>
+         <div>
+           <label class="block mb-1 font-medium text-blue-800">Alamat</label>
+           <input name="alamat_ktp" type="text" placeholder="Alamat KTP" required class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+         </div>
+         <div>
+           <label class="block mb-1 font-medium text-blue-800">Desa / Kelurahan</label>
+           <input name="desa" type="text" placeholder="Desa / Kelurahan" required class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+         </div>
+         <div>
+           <label class="block mb-1 font-medium text-blue-800">Kecamatan</label>
+           <input name="kecamatan" type="text" required placeholder="Kecamatan" class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+         </div>
+         <div>
+           <label class="block mb-1 font-medium text-blue-800">Kabupaten / Kota</label>
+           <input name="kabupaten" type="text" required placeholder="Kabupaten / Kota" class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+         </div>
+         <div>
+           <label class="block mb-1 font-medium text-blue-800">Provinsi</label>
+           <input name="provinsi" type="text" required placeholder="Provinsi" class="w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+         </div>
+         <div>
+           <label class="block mb-1 font-medium text-blue-800">Kode Pos</label>
+           <input name="kode_pos" type="number" placeholder="Kode Pos" maxlength="6" class="no-spinner w-full rounded-lg border border-blue-200 p-3 focus:outline-none focus:ring-2 focus:ring-blue-400" />
+         </div>
+         <div class="flex items-end h-full">
+           <button type="button" class="w-full bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-xl"> Dokumen / File / Foto </button>
+         </div>
+         <div class="flex items-end h-full">
+           <button type="button" class="w-full bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-xl"> Kirim </button>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
